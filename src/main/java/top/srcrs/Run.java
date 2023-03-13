@@ -16,8 +16,8 @@ import top.srcrs.util.Encryption;
 import top.srcrs.util.Request;
 import java.util.*;
 
-/**
- * 这里是程序运行开始的地方
+/*
+ * 这里就是程序运行开始的地方
  * @author srcrs
  * @Time 2020-10-31
  */
@@ -26,14 +26,14 @@ public class Run
     /** 获取日志记录器对象 */
     private static final Logger LOGGER = LoggerFactory.getLogger(Run.class);
 
-    /** 获取用户所有关注贴吧 */
+    /** 获取用户关注的所有贴吧 */
     String LIKE_URL = "https://tieba.baidu.com/mo/q/newmoindex";
-    /** 获取用户的tbs */
+    /** 获取用户的 tbs */
     String TBS_URL = "http://tieba.baidu.com/dc/common/tbs";
     /** 贴吧签到接口 */
     String SIGN_URL = "http://c.tieba.baidu.com/c/c/forum/sign";
 
-    /** 存储用户所关注的贴吧 */
+    /** 存储用户关注的所有贴吧 */
     private List<String> follow = new ArrayList<>();
     /** 签到成功的贴吧列表 */
     private static List<String>  success = new ArrayList<>();
@@ -58,7 +58,7 @@ public class Run
         }
     }
 
-    /**
+    /*
      * 进行登录，获得 tbs ，签到的时候需要用到这个参数
      * @author srcrs
      * @Time 2020-10-31
@@ -110,7 +110,7 @@ public class Run
      * @Time 2020-10-31
      */
     public void runSign(){
-        // 当执行 5 轮所有贴吧还未签到成功就结束操作
+        // 当执行 5 轮，所有贴吧还未签到成功就结束操作
         Integer flag = 5;
         try{
             while(success.size()<followNum&&flag>0){
